@@ -8,11 +8,8 @@ use File::Basename ();
 my $builder = CAF_MB_Installer->new(
     module_name         => 'CGI::Application::Framework',
     license             => 'perl',
-    dist_author         => 'Richard Dice <rdice-at-pobox.com>',
+    dist_author         => 'Richard Dice <rdice@pobox.com>',
     dist_version_from   => 'lib/CGI/Application/Framework.pm',
-    requires => {
-        'Test::More' => 0,
-    },
     get_options => {
          'skip-examples'  => {                 },
          'help'           => {                 },
@@ -59,8 +56,23 @@ my $builder = CAF_MB_Installer->new(
         'Text::CSV_XS'                              => 0,
         'IPC::Shareable'                            => 0,
         'CGI::Application::Plugin::Config::Context' => 0,
-        'CGI::Application::Plugin::AnyTemplate'     => 0.05,
+        'CGI::Application::Plugin::AnyTemplate'     => 0.11,
         'CGI::Application::Plugin::LogDispatch'     => 0,
+    },
+    meta_add            => {
+        no_index       => {
+            dir => [ qw/
+                 caf_cgi
+                 caf_config
+                 caf_htdoc
+                 caf_image
+                 caf_project
+                 caf_server
+                 caf_sql
+                 misc
+                 t
+            /]
+        }
     },
     add_to_cleanup      => [ 'CGI-Application-Framework-*' ],
     create_makefile_pl  => 'passthrough',
@@ -524,6 +536,7 @@ EOF
 }
 
 $builder->create_build_script;
+
 
 
 

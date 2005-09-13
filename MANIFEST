@@ -92,6 +92,8 @@ misc/dist
 misc/makedocs.pl
 misc/module-starter-opts.txt
 misc/style.css
+pod2htmd.tmp
+pod2htmi.tmp
 README
 t/00-load.t
 t/01-initial_login_page.t
