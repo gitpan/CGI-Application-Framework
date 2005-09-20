@@ -9,11 +9,11 @@ CGI::Application::Framework - Fully-featured MVC web application platform
 
 =head1 VERSION
 
-Version 0.22
+Version 0.23
 
 =cut
 
-our $VERSION = '0.22';
+our $VERSION = '0.23';
 
 use base qw / CGI::Application Exporter /;
 use vars qw / @EXPORT_OK $AUTOLOAD /;

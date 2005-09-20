@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: CGI-Application-Framework
-version: 0.22
+version: 0.23
 author:
   - Richard Dice <rdice@pobox.com>
 abstract: Fully-featured MVC web application platform

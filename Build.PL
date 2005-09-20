@@ -36,7 +36,7 @@ my $builder = CAF_MB_Installer->new(
         'Date::Manip'                               => 0,
         'Time::Format'                              => 0,
         'DBI'                                       => 0,
-        'DBD::SQLite'                               => 0,
+        'DBD::SQLite'                               => 1.09,
         'Class::DBI'                                => 0,
         'Class::DBI::Loader'                        => 0.22,
         'Class::DBI::SQLite'                        => 0,
@@ -58,6 +58,7 @@ my $builder = CAF_MB_Installer->new(
         'CGI::Application::Plugin::Config::Context' => 0,
         'CGI::Application::Plugin::AnyTemplate'     => 0.11,
         'CGI::Application::Plugin::LogDispatch'     => 0,
+        'Module::Build'                             => 0.2602,
     },
     meta_add            => {
         no_index       => {
