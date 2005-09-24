@@ -1,5 +1,8 @@
 Revision history for CGI-Application-Framework
 
+0.24
+   - Rebuild with better Module::Build YAML support
+
 0.23
    - Added version number requirements on Module::Build (0.2602) and
      DBD::SQLite (1.09) so that 'make test' doesn't fail for people
