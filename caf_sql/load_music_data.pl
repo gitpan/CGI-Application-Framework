@@ -14,16 +14,15 @@ use File::Spec;
 
 use lib '!!- path_projects_dir -!!/Example/common-modules';
 use lib '!!- path_projects_dir -!!/Example/applications/example_1';
-use CDBI::Example::example;
 
 use example_1;
 my $webapp = example_1->new(
     PARAMS => {
-        'framework_app_dir' => '!!- path_projects_dir -!!',
+        'framework_app_dir' => '!!- path_projects_dir -!!/Example/applications/example_1',
     }
 );
 
-my $config = $webapp->conf->getall;
+my $config = $webapp->conf->context;
 
 CDBI::Example::example->setup_tables;
 
@@ -54,25 +53,25 @@ while ( my $line = <> ) {
 
 foreach my $row ( @alldata ) {
 
-    my $artist = CDBI::Example::example::artist->find_or_create
+    my $artist = CDBI::Example::example::Artist->find_or_create
 	({
 	    artist_name => $row->{artist}
 	});
 
-    my $album = CDBI::Example::example::album->find_or_create
+    my $album = CDBI::Example::example::Album->find_or_create
 	({
 	    album_name => $row->{album},
 	    artist_id  => $artist->artist_id,
 	    album_year => $row->{album_year},
 	});
 
-    my $song = CDBI::Example::example::song->find_or_create
+    my $song = CDBI::Example::example::Song->find_or_create
 	({
 	    song_name => $row->{song_name},
 	    artist_id => $artist->artist_id,
 	});
 
-    my $album_song = CDBI::Example::example::album_song->find_or_create
+    my $album_song = CDBI::Example::example::AlbumSong->find_or_create
 	({
 	    album_id  => $album->album_id,
 	    song_id   => $song->song_id,

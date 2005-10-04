@@ -9,11 +9,11 @@ CGI::Application::Framework - Fully-featured MVC web application platform
 
 =head1 VERSION
 
-Version 0.24
+Version 0.25
 
 =cut
 
-our $VERSION = '0.24';
+our $VERSION = '0.25';
 
 use base qw / CGI::Application Exporter /;
 use vars qw / @EXPORT_OK $AUTOLOAD /;
@@ -2577,11 +2577,6 @@ sub _log_init {
     }
 
     $self->log_config(%log_options);
-
-    my $die_handler = $SIG{__DIE__} || &CORE::die;
-
-    # This wreaks havoc with Apache::Session, so we don't do it!
-    # $SIG{__DIE__} = sub { $self->log->debug(@_); &$die_handler(@_); };
 
     $self->log->debug("logging system initialized: (pid: $$)");
 
