@@ -43,6 +43,7 @@ my $builder = CAF_MB_Installer->new(
         'Class::DBI::AbstractSearch'                => 0,
         'Apache::Session'                           => 0,
         'Apache::SessionX'                          => 0,
+        'URI'                                       => 0,
         'CGI'                                       => 0,
         'CGI::Carp'                                 => 0,
         'CGI::Enurl'                                => 0,
@@ -59,6 +60,7 @@ my $builder = CAF_MB_Installer->new(
         'CGI::Application::Plugin::AnyTemplate'     => 0.11,
         'CGI::Application::Plugin::LogDispatch'     => 0,
         'Module::Build'                             => 0.2602,
+        'Module::Load'                              => 0,
     },
     meta_add            => {
         no_index       => {

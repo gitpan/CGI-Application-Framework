@@ -1,5 +1,9 @@
 Revision history for CGI-Application-Framework
 
+0.26
+   - A few bug fixes, found during the CAF hack-a-thon on Sat 29 Oct 2005
+     at the LPI office
+
 0.24
    - Rebuild with better Module::Build YAML support
 

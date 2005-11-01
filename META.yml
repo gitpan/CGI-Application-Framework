@@ -1,6 +1,6 @@
 ---
 name: CGI-Application-Framework
-version: 0.25
+version: 0.26
 author:
   - Richard Dice <rdice@pobox.com>
 abstract: Fully-featured MVC web application platform
@@ -32,15 +32,17 @@ requires:
   Log::Dispatch: 0
   Log::Dispatch::Config: 0
   Module::Build: 0.2602
+  Module::Load: 0
   Regexp::Common: 0
   Test::More: 0
   Text::CSV_XS: 0
   Time::Format: 0
   Time::HiRes: 0
+  URI: 0
 provides:
   CGI::Application::Framework:
     file: lib/CGI/Application/Framework.pm
-    version: 0.25
+    version: 0.26
   CGI::Application::Framework::CDBI:
     file: lib/CGI/Application/Framework/CDBI.pm
   CGI::Application::Framework::Constants:

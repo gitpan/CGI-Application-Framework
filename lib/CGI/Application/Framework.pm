@@ -9,11 +9,11 @@ CGI::Application::Framework - Fully-featured MVC web application platform
 
 =head1 VERSION
 
-Version 0.25
+Version 0.26
 
 =cut
 
-our $VERSION = '0.25';
+our $VERSION = '0.26';
 
 use base qw / CGI::Application Exporter /;
 use vars qw / @EXPORT_OK $AUTOLOAD /;
@@ -38,8 +38,6 @@ use CGI::Application::Framework::Constants qw (
                                                SESSION_IN_URL
                                                SESSION_MISSING
                                               );
-
-use Log::Log4perl;
 
 use CGI::Application::Plugin::ValidateRM qw / check_rm /;
 use CGI::Application::Plugin::Config::Context;
@@ -3382,6 +3380,9 @@ sub _framework_template_pre_process {
 
     # Change the internal template parameters by reference
     my $params = $template->get_param_hash;
+
+    # Add the public configuration params to all templates
+    $template->param(scalar $self->conf->context);
 
     $params->{'SESSION_STATE'} = $self->_make_hidden_session_state_tag;
 
